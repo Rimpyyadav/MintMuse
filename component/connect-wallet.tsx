@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Wallet } from "lucide-react"
+import { WalletMultiButton } from '@solana/wallet-adapter-react-ui';
 
 interface ConnectWalletButtonProps {
   connected: boolean

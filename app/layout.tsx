@@ -1,5 +1,5 @@
 'use client';
-
+import { WalletContextProvider } from '@/lib/walletContextProvider';
 import {
   WalletAdapterNetwork,
   ConnectionProvider,
@@ -30,7 +30,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets} autoConnect>
         <WalletModalProvider>
+            <WalletContextProvider>
           {children}
+        </WalletContextProvider>
         </WalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>

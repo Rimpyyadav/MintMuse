@@ -1,24 +1,18 @@
-// lib/uploadToNFTStorage.ts
-import { NFTStorage, File } from 'nft.storage';
+import { NFTStorage, File } from 'nft.storage'
 
-const API_KEY = process.env.NEXT_PUBLIC_NFT_STORAGE_KEY!;
+const NFT_STORAGE_KEY = process.env.NEXT_PUBLIC_NFT_STORAGE_API_KEY!
 
-export async function uploadToNFTStorage({
-  name,
-  description,
-  file,
-}: {
-  name: string;
-  description: string;
-  file: File;
+export async function uploadMetadataToIPFS(metadata: {
+  name: string
+  description: string
+  image: string // Should be an IPFS URL like ipfs://bafy...
 }) {
-  const client = new NFTStorage({ token: API_KEY });
+  const client = new NFTStorage({ token: NFT_STORAGE_KEY })
 
-  const metadata = await client.store({
-    name,
-    description,
-    image: file,
-  });
+  const metadataBlob = new Blob([JSON.stringify(metadata)], {
+    type: 'application/json',
+  })
 
-  return metadata.url; // e.g., ipfs://bafy...
+  const cid = await client.storeBlob(metadataBlob)
+  return `ipfs://${cid}`
 }

@@ -9,6 +9,7 @@ interface NavbarProps {
   onConnect: () => void
 }
 
+
 export function Navbar({ connected, address, onConnect }: NavbarProps) {
   return (
     <header className="sticky top-0 z-10 backdrop-blur-md bg-gray-950/80 border-b border-gray-800">

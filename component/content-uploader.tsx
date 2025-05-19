@@ -2,9 +2,9 @@
 
 import type React from "react"
 import { NFTUploader } from "./nft-uploader"
-import { uploadImageToIPFS, uploadMetadataToIPFS}
 
-import {uploadImage}
+
+
 
 import { useState, useRef } from "react"
 import { Upload, FileText, Music, Code, ImageIcon } from "lucide-react"

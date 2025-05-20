@@ -1,41 +1,21 @@
-'use client';
-import { WalletContextProvider } from '@/lib/walletContextProvider';
-import {
-  WalletAdapterNetwork,
-  ConnectionProvider,
-  WalletProvider
-} from '@solana/wallet-adapter-react';
-import {
-  WalletModalProvider
-} from '@solana/wallet-adapter-react-ui';
-import {
-  PhantomWalletAdapter,
-  BackpackWalletAdapter
-} from '@solana/wallet-adapter-wallets';
-import { clusterApiUrl } from '@solana/web3.js';
-import { useMemo } from 'react';
+import './globals.css'
 import { Providers } from './providers'
 
-require('@solana/wallet-adapter-react-ui/styles.css');
+export const metadata = {
+  title: 'MintMuse',
+  description: 'Mint your creative work as NFT',
+}
 
-export function Providers({ children }: { children: React.ReactNode }) {
-  const network = WalletAdapterNetwork.Devnet;
-  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-
-  const wallets = useMemo(
-    () => [new PhantomWalletAdapter(), new BackpackWalletAdapter()],
-    [network]
-  );
-
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <ConnectionProvider endpoint={endpoint}>
-      <WalletProvider wallets={wallets} autoConnect>
-        <WalletModalProvider>
-            <WalletContextProvider>
-          {children}
-        </WalletContextProvider>
-        </WalletModalProvider>
-      </WalletProvider>
-    </ConnectionProvider>
-  );
+    <html lang="en">
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  )
 }

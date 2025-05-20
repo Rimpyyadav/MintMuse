@@ -3,9 +3,6 @@
 import type React from "react"
 import { NFTUploader } from "./nft-uploader"
 
-
-
-
 import { useState, useRef } from "react"
 import { Upload, FileText, Music, Code, ImageIcon } from "lucide-react"
 

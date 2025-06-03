@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+MintMuse is a decentralized NFT minting dApp built on the Solana blockchain. It enables users to connect their Solana wallet (Phantom, Backpack, etc.), interact with the blockchain, and mint NFTs seamlessly via a modern Next.js frontend.
 
-## Getting Started
+🚀 Features
+🔗 Connect with Solana wallets (Phantom, Backpack)
 
-First, run the development server:
+🖼️ NFT Minting via Solana devnet
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🌐 Next.js App Router with use client support
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔐 Wallet Context Provider using @solana/wallet-adapter
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🎨 Fully extensible and customizable UI
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+📦 Tech Stack
+Next.js (App Router)
 
-## Learn More
+React (v19)
 
-To learn more about Next.js, take a look at the following resources:
+TailwindCSS (or your styling solution)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Solana Web3.js
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+@solana/wallet-adapter (Phantom, Backpack support)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Typescript
